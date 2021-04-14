@@ -1,0 +1,238 @@
+#hero {
+            height:100vh;
+            width:100%;
+            background:red;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+}
+
+
+
+#hero::after {
+      width:100%;
+      height:100%;
+      content: '';
+      position:absolute;
+      z-index:10;
+      top:0;
+      left:0;
+      background:rgba(0,0,0,0.5)
+}
+
+
+#hero video {
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:5;
+      object-fit:cover;
+      font-family:'object-fit: cover';
+}
+
+
+#hero .texture {
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:15;
+      background:url('../texture.png');
+}
+
+
+#hero .caption {
+
+      position:relative;
+      z-index:20;
+      text-align:center;
+      color:#ffffff;
+}
+
+
+
+#hero .caption h1 {
+
+      text-transform: uppercase;
+      font-size:2em;
+      font-family: 'Oswald', sans-serif;
+      margin-bottom:0.5rem;
+}
+
+#hero .caption h2 {
+      font-weight:400;
+      font-size:1.5rem;
+      margin:0;
+      font-family: 'PT Sans', sans-serif;
+}
+
+
+
+
+@media screen and (min-width:768px)
+{
+      #hero .caption h1 {
+            font-size:2.5rem;
+      }
+
+      #hero .caption h2 {
+            font-size:1.75rem;
+      }
+}
+
+
+
+
+@media screen and (min-width:992px)
+{
+      #hero .caption h1 {
+            font-size:3rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2rem;
+      }
+}
+
+
+
+@media screen and (min-width:1200px)
+{
+      #hero .caption h1 {
+            font-size:4rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2.5rem;
+      }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #FFF;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+      flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+/*   padding: 2em 0em; */
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  padding:  40px 0px;
+  width: 240px;
+}
+img {
+	max-width: 45%;
+	height: auto;
+}
+h1 {
+  text-align: left;
+  color: white;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.4em;
+  font-size: 1em;
+}
+
+p {
+  text-align: left;
+  color: white;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
+  margin: 0 0 2em;
+}
+
+
+.btn {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect04 {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color: white;
+  outline: solid  2px #000;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+}
+
+.effect04::before,
+.effect04 span{
+    margin: 0 auto;
+	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+	transition-duration: 0.4s;
+}
+
+/* 文字1を上に */
+.effect04:hover{
+
+  background-color: #000;
+}
+
+/* HOVERしたら文字1を上に */
+.effect04:hover span{
+  -webkit-transform: translateY(-400%) scale(-0.1,20);
+          transform: translateY(-400%) scale(-0.1,20);
+}
+
+/*文字2*/
+.effect04::before{
+  content: attr(data-sm-link-text);
+	color: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1,20);
+          transform: translateY(500%) scale(-0.1,20);
+}
+
+/* HOVERしたら文字2を上に */
+.effect04:hover::before{
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1,1);
+          transform: translateY(0) scale(1,1);
+}
+
